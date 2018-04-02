@@ -8,7 +8,7 @@
             "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2018-03-30%2F41fa40d1/ctags-2018-03-30_41fa40d1-x86.zip"
         }
     },
-    "bin": [["ctags.exe", "univ_ctags.exe"]],
+    "bin": [["ctags.exe", "univ_ctags"]],
     "homepage": "https://ctags.io/",
     "notes": "The alias univ_ctags.exe is being used to avoid conflicts with ctags"
 }
