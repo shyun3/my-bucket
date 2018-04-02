@@ -1,0 +1,14 @@
+{
+    "version": "2018-03-30/41fa40d1",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2018-03-30%2F41fa40d1/ctags-2018-03-30_41fa40d1-x64.zip"
+        },
+        "32bit": {
+            "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2018-03-30%2F41fa40d1/ctags-2018-03-30_41fa40d1-x86.zip"
+        }
+    },
+    "bin": "ctags.exe",
+    "homepage": "https://ctags.io/",
+    "notes": "Warning: Exuberant Ctags may not be installed at the same time!"
+}
