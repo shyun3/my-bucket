@@ -1,5 +1,5 @@
 {
-    "version": "2018-03-30/41fa40d1",
+    "version": "2018-03-30",
     "architecture": {
         "64bit": {
             "url": "https://github.com/universal-ctags/ctags-win32/releases/download/2018-03-30%2F41fa40d1/ctags-2018-03-30_41fa40d1-x64.zip"
