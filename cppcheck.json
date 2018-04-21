@@ -8,6 +8,6 @@
       "url": "http://github.com/danmar/cppcheck/releases/download/1.83/cppcheck-1.83-x86-Setup.msi"
     }
   },
-  "bin": "cppcheck.exe",
+  "bin": "Cppcheck/cppcheck.exe",
   "homepage": "http://cppcheck.sourceforge.net/"
 }
