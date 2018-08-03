@@ -52,7 +52,7 @@
         "scripts"
     ],
     "env_set": {
-        ".py;$env:PATHEXT"
+        "PATHEXT": ".py;$env:PATHEXT"
     },
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
