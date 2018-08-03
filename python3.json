@@ -18,18 +18,16 @@
             "/quiet",
             "InstallAllUsers=$(@{$true=1;$false=0}[$global])",
             "TargetDir=\"$dir\"",
-            "PrependPath=1",
             "Shortcuts=0",
             "InstallLauncherAllUsers=$(@{$true=1;$false=0}[$global])"
         ]
     },
+    "post_install": [
+        "$null, $env:PATHEXT = strip_path \"$env:PATHEXT\" \".py\"",
+        "$env:PATHEXT = \".py;$env:PATHEXT\""
+    ],
     "uninstaller": {
-        "file": "uninstall.exe",
-        "args": [
-            "/uninstall",
-            "/quiet",
-            "InstallAllUsers=0"
-        ]
+        "script": "$dir/uninstall.exe /uninstall /quiet InstallAllUsers=0; $null, $env:PATHEXT = strip_path \"$env:PATHEXT\" \".py\""
     },
     "bin": [
         "python.exe",
