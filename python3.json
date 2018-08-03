@@ -25,7 +25,7 @@
     "post_install": [
         "$null, $env:PATHEXT = strip_path \"$env:PATHEXT\" \".py\"",
         "$env:PATHEXT = \".py;$env:PATHEXT\"",
-        "env 'path' $global \"$env:PATHEXT\""
+        "env 'pathext' $global \"$env:PATHEXT\""
     ],
     "uninstaller": {
         "file": "uninstall.exe",
