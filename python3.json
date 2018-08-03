@@ -18,6 +18,7 @@
             "/quiet",
             "InstallAllUsers=$(@{$true=1;$false=0}[$global])",
             "TargetDir=\"$dir\"",
+            "PrependPath=1",
             "Shortcuts=0",
             "InstallLauncherAllUsers=$(@{$true=1;$false=0}[$global])"
         ]
@@ -51,9 +52,6 @@
         ".",
         "scripts"
     ],
-    "env_set": {
-        "PATHEXT": ".py;$env:PATHEXT"
-    },
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
         "re": "python-(3.6.[\\d.]+)-amd64.exe"
