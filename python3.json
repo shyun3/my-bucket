@@ -18,7 +18,7 @@
             "/quiet",
             "InstallAllUsers=$(@{$true=1;$false=0}[$global])",
             "TargetDir=\"$dir\"",
-            "AssociateFiles=1",
+            "PrependPath=1",
             "Shortcuts=0",
             "InstallLauncherAllUsers=$(@{$true=1;$false=0}[$global])"
         ]
@@ -47,10 +47,6 @@
             "Lib\\idlelib\\idle.bat",
             "idle36"
         ]
-    ],
-    "env_add_path": [
-        ".",
-        "scripts"
     ],
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
