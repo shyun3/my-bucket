@@ -29,7 +29,7 @@
         "$env:PATHEXT = \".py;$env:PATHEXT\""
     ],
     "uninstaller": {
-        "script": "$dir\\uninstall.exe /uninstall /quiet InstallAllUsers=0; $null, $currExt = strip_path (env 'PATHEXT' $global) '.py'; env 'PATHEXT' $global $currExt; $null, $env:PATHEXT = strip_path $env:PATHEXT '.py'"
+        "script": "& $dir\\uninstall.exe /uninstall /quiet InstallAllUsers=0; $null, $currExt = strip_path (env 'PATHEXT' $global) '.py'; env 'PATHEXT' $global $currExt; $null, $env:PATHEXT = strip_path $env:PATHEXT '.py'"
     },
     "bin": [
         "python.exe",
