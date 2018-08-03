@@ -23,17 +23,13 @@
         ]
     },
     "post_install": [
-        "$null, $env:PATHEXT = strip_path \"$env:PATHEXT\" \".py\"",
-        "$env:PATHEXT = \".py;$env:PATHEXT\"",
-        "env 'pathext' $global \"$env:PATHEXT\""
+        "$null, $currExt = strip_path (env 'PATHEXT' $global) '.py'",
+        "env 'PATHEXT' $global \".py;$currExt\"",
+        "$null, $env:PATHEXT = strip_path $env:PATHEXT '.py'",
+        "$env:PATHEXT = \".py;$env:PATHEXT\""
     ],
     "uninstaller": {
-        "file": "uninstall.exe",
-        "args": [
-            "/uninstall",
-            "/quiet",
-            "InstallAllUsers=0"
-        ]
+        "script": "$dir\\uninstall.exe /uninstall /quiet InstallAllUsers=0; $null, $currExt = strip_path (env 'PATHEXT' $global) '.py'; env 'PATHEXT' $global $currExt; $null, $env:PATHEXT = strip_path $env:PATHEXT '.py'"
     },
     "bin": [
         "python.exe",
