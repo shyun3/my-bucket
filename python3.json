@@ -1,15 +1,15 @@
 {
     "homepage": "https://www.python.org/",
     "license": "https://docs.python.org/3/license.html",
-    "version": "3.6.6",
+    "version": "3.7.0",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/3.6.6/python-3.6.6-amd64.exe#/py3.exe",
-            "hash": "cd2129e6a20f7821ae32da8068cf07280bb7da86f32737db9e6384b8f515a20c"
+            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe#/py3.exe",
+            "hash": "md5:531c3fc821ce0a4107b6d2c6a129be3e"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/3.6.6/python-3.6.6.exe#/py3.exe",
-            "hash": "294b6682e1a7978b8430e47e3c7cd7fa46f9c14ac583c876fc45143d4fdefd93"
+            "url": "https://www.python.org/ftp/python/3.7.0/python-3.7.0.exe#/py3.exe",
+            "hash": "md5:ebb6444c284c1447e902e87381afeff0"
         }
     },
     "pre_install": "copy-item $dir\\py3.exe $dir\\uninstall.exe",
@@ -38,14 +38,10 @@
             "python.exe",
             "python3"
         ],
-        [
-            "python.exe",
-            "python36"
-        ],
         "Lib\\idlelib\\idle.bat",
         [
             "Lib\\idlelib\\idle.bat",
-            "idle36"
+            "idle3"
         ]
     ],
     "env_add_path": [
@@ -54,7 +50,7 @@
     ],
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "re": "python-(3.6.[\\d.]+)-amd64.exe"
+        "re": "Latest Python 3 Release - Python ([\\d\\.]+)"
     },
     "autoupdate": {
         "architecture": {
@@ -64,6 +60,10 @@
             "32bit": {
                 "url": "https://www.python.org/ftp/python/$version/python-$version.exe#/py3.exe"
             }
+        },
+        "hash": {
+            "url": "https://www.python.org/downloads/release/python-$cleanVersion/",
+            "find": "<td><a href=\".*$basename\".*</a></td>\\s+<td>Windows</td>\\s+<td>.*</td>\\s+<td>([A-Fa-f\\d]{32})"
         }
     }
 }
