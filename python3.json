@@ -51,6 +51,7 @@
         "url": "https://www.python.org/downloads/windows/",
         "re": "Latest Python 3 Release - Python ([\\d\\.]+)"
     },
+    "notes": "Make sure the PATHEXT environment variable includes .py",
     "autoupdate": {
         "architecture": {
             "64bit": {
