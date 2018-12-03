@@ -12,7 +12,6 @@
             "hash": "md5:ebb6444c284c1447e902e87381afeff0"
         }
     },
-    "pre_install": "copy-item $dir\\py3.exe $dir\\uninstall.exe",
     "installer": {
         "args": [
             "/quiet",
@@ -20,16 +19,16 @@
             "TargetDir=\"$dir\"",
             "Shortcuts=0",
             "InstallLauncherAllUsers=$(@{$true=1;$false=0}[$global])"
-        ]
+        ],
+        "keep": true
     },
-    "post_install": [
-        "$null, $currExt = strip_path (env 'PATHEXT' $global) '.py'",
-        "env 'PATHEXT' $global \".py;$currExt\"",
-        "$null, $env:PATHEXT = strip_path $env:PATHEXT '.py'",
-        "$env:PATHEXT = \".py;$env:PATHEXT\""
-    ],
     "uninstaller": {
-        "script": "& $dir\\uninstall.exe /uninstall /quiet InstallAllUsers=0 | Out-Null; $null, $currExt = strip_path (env 'PATHEXT' $global) '.py'; env 'PATHEXT' $global $currExt; $null, $env:PATHEXT = strip_path $env:PATHEXT '.py'"
+        "file": "py3.exe",
+        "args": [
+            "/uninstall",
+            "/quiet",
+            "InstallAllUsers=0"
+        ]
     },
     "bin": [
         "python.exe",
